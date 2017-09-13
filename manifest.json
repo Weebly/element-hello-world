@@ -1,0 +1,30 @@
+{
+    "manifest": "1",
+    "version": "0.1.0",
+    "locale": "",
+    "client_id": "",
+    "callback_url": "https://{{YOUR_URL_AUTH_CALLBACK_URL}}",
+    "scopes": [],
+    "oauth_final_destination": "editor", // Optional Values: editor, publish, manage, dashboard_card-{{DASHBOARD_CARD_NAME}}
+    "elements": [
+        "name": "{{ELEMENT_NAME}}",
+        "path": "{{ELEMENT_NAME_PATH}}",
+        "version": "{{ELEMENT_NAME_VERSION}}",
+        "settings": {
+        },
+        "properties": [
+        ]
+    ],
+    "tutorial": { // Optional
+        "introduction": "",
+        "type": "topics",
+        "content": [
+            {
+                "label": "",
+                "introduction": "",
+                "type": "steps", // Optional Values: 
+            }
+        ],
+        "autopop": true
+    } 
+}
