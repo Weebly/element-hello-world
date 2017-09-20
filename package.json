@@ -1,0 +1,24 @@
+{
+  "name": "weebly-element-starter-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js application wrapped in a Docker container that helps developers build Weebly Elements",
+  "main": "index.js",
+  "dependencies": {
+    "registry-auth-token": "^3.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdeanindy/weebly-element-starter-app.git"
+  },
+  "keywords": [],
+  "author": "Benjamin Dean <benjamin@benjamindean.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bdeanindy/weebly-element-starter-app/issues"
+  },
+  "homepage": "https://github.com/bdeanindy/weebly-element-starter-app#readme"
+}
