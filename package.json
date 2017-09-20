@@ -1,6 +1,6 @@
 {
   "name": "weebly-element-starter-app",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Simple Node.js application wrapped in a Docker container that helps developers build Weebly Elements",
   "main": "index.js",
   "dependencies": {
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/bdeanindy/weebly-element-starter-app.git"
   },
-  "keywords": [],
+  "keywords": ["weebly", "weebly apps", "developers", "apps", "weebly starter", "elements", "weebly elements", "weebly element developer", "weebly element app"],
   "author": "Benjamin Dean <benjamin@benjamindean.com>",
   "license": "MIT",
   "bugs": {
