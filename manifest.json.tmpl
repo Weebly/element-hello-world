@@ -1,84 +1,18 @@
 {
     "manifest": "1",
-    "version": "0.1.0",
-    "locale": "en-gb", // Default is `en-us`
-    "client_id": "",
-    "callback_url": "https://{{YOUR_URL_AUTH_CALLBACK_URL}}", // Optional
-    "manage_app_url": "https://{{YOUR_MANAGE_URL_FOR_THE_APP}}", // Optional, more info: https://dev.weebly.com/how-site-owners-manage-your-app.html
-    "scopes": ["read:site", "write:site"], // Optional Values: `read:blog`, `write:blog`, `read:site`, `write:site`, `read:store-catalog`, `write:store-catalog`, `read:store-orders`, `write:store-orders`, `read:membership`, `write:membership`
-    "webhooks": {
-        "callback_url": "https://{{YOUR_WEBHOOK_CALLBACK_URL}}", // Optional
-        "events": ["user:update", "site:publish"], // If app includes Dashboard Card, must include `dashboard.card.update`. For more information about all available events: https://dev.weebly.com/use-webhooks.html 
-    },
-    "snippet": "{{RELATIVE_PATH_FROM_APP_ROOT_TO_SNIPPET_HTML_FILE}}", // This will be included on every page of the published site
-    "oauth_final_destination": "editor", // Optional Values: editor, publish, manage, dashboard_card-{{DASHBOARD_CARD_NAME}}
-
-    // DASHBOARD CARDS
-    "dashboard_cards": { // Optional, only required if there are Dashboard Cards with this app
-        "name": "{{NAME_OF_DASHBOARD_CARD}}",
-        "version": "{{VERSION_OF_DASHBOARD_CARD}}",
-        "label": "{{LABEL_OF_DASHBOARD_CARD}}",
-        "icon": "{{RELATIVE_PATH_TO_ICON_FOR_DASHBOARD_CARD}}",
-        "link": "[https://]{{URL_TO_TAKEOVER_CONTENT}}", See this for restrictions: https://dev.weebly.com/create-a-dashboard-card.htmlupdate.card
-        "default": [ // See this for the convolution which can occur: https://dev.weebly.com/create-a-dashboard-card.html#add-panes
-            {...DASHBOARD_COMPONENT_OBJECT_SCHEMA...}
-        ]
-    },
-    // END DASHBOARD CARDS
-
-    // ELEMENTS
-    "elements": [ // Optional, only required if there are elements with this app
+    "version": "{{WEEBLY_APP_VERSION}}",
+    "locale": "en-us",
+    "client_id": "{{WEEBLY_CLIENT_ID}}",
+    "callback_url": "https://{{WEEBLY_OAUTH_CALLBACK_URL}}",
+    "scopes": {{WEEBLY_APP_SCOPES}},
+    "oauth_final_destination": "{{WEEBLY_OAUTH_FINAL_DESTINATION}}",
+    "elements": [
         "name": "{{ELEMENT_NAME}}",
         "path": "{{ELEMENT_NAME_PATH}}",
         "version": "{{ELEMENT_NAME_VERSION}}",
         "settings": {
-            "config": {
-                "autopop": true // Defaults to `false`
-            }
         },
         "properties": [
-            {
-                "name": "{{INTERNAL_GROUP_NAME}}", // Useful for creating pages such as: Settings, Features, Location, Alignment, Advanced Settings, etc...
-                "label": "{{VISIBLE_LABEL_FOR_THIS_GROUP}}",
-                "type": "group", // Optional Values: `string`, `text`, `int`, `slider`, `toggle`, `radio`, `select`, `color`, `align`, and of course `group`
-                "default": "", // Default value for a setting, use "" for null
-                "hidden": true, // Default is `false`
-                "private": true, // Default is `false`, private makes this content only available to the editor code, but is NOT displayed to users
-                "tooltip": "" // The information to display when this is hovered over. 100 char maximum. No HTML permitted.
-            }
         ]
-    ],
-    // END ELEMENTS
-
-    //THEMES
-    "enableEditorJS": true, // Default is `false`, set to `true` if you want to use JS in your theme within the Weebly Editor. Info on current known issues: https://dev.weebly.com/known-issues.html#javascript
-    "responsive": true, // Default is `false`
-    "glyph-icons": true, // Do not set to false?
-    "is-dark": true, // Default is `false`. Set to `true` if your theme has a dark background
-    "color-support": [ // Optional, see: https://dev.weebly.com/create-a-color-palette.html
-        {{COLOR_PALETTE_OBJECT}} 
-    ],
-    "color-presets": [ // Optional, see: https://dev.weebly.com/create-a-color-palette.html
-        {{COLOR_PALETTE_OBJECT}}
-    ],
-    "variations": [ // Optional, see: https://dev.weebly.com/add-color-variations.html
-        {{COLOR_PALETTE_VARIATIONS_OBJECT}}
-    ],
-    "custom-options": [ // Optional, see: https://dev.weebly.com/add-options-to-your-theme.html#option-examples
-        {{CUSTOM_OPTION_OBJECTS}}
-    ],
-    // END THEMES
-
-    "tutorial": { // Optional
-        "introduction": "",
-        "type": "topics", // Optional Values: `steps`
-        "content": [
-            {
-                "label": "",
-                "introduction": "",
-                "type": "steps", // Optional Values: 
-            }
-        ],
-        "autopop": true
-    } 
+    ]
 }
