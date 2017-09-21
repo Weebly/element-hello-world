@@ -7,12 +7,55 @@
     "scopes": {{WEEBLY_APP_SCOPES}},
     "oauth_final_destination": "{{WEEBLY_OAUTH_FINAL_DESTINATION}}",
     "elements": [
-        "name": "{{ELEMENT_NAME}}",
-        "path": "{{ELEMENT_NAME_PATH}}",
-        "version": "{{ELEMENT_NAME_VERSION}}",
-        "settings": {
+        {
+            "name": "Hello World",
+            "path": "elements/hello_world",
+            "version": "0.1.0",
+            "settings": {
+                "config": {
+                    "autopop": true
+                },
+                "properties": [
+                    {
+                        "name": "{{SETTING_NAME}}",
+                        "label": "{{SETTINGS_LABEL_DISPLAY_NAME}}",
+                        "type": "{{ONE_OF_THE_WEEBLY_VALID_SETTING_TYPES}}",
+                        "default": "{{DEFAULT_VALUE_FOR_THIS_SETTING_OR_EMPTY_STRING_FOR_NULL}}",
+                        "hidden": false,
+                        "private": false,
+                        "tooltip": "{{ELEMENT_SETTING_SPECIFIC_TOOLTIP_NO_HTML_ALLOWED_100_CHAR_MAX}}"
+                    }
+                ]
+            },
+            "properties": [
+            ]
         },
-        "properties": [
-        ]
-    ]
+        {
+            "name": "{{ELEMENT_NAME}}",
+            "path": "elements/{{ELEMENT_NAME}}",
+            "version": "{{ELEMENT_NAME_VERSION}}",
+            "settings": {
+                "config": {
+                    "autopop": true
+                },
+                "properties": [
+                    {
+                        "name": "{{PROPERTY_NAME}}",
+                        "label": "{{SETTINGS_LABEL_DISPLAY_NAME}}",
+                        "type": "{{ONE_OF_THE_WEEBLY_VALID_SETTING_TYPES}}",
+                        "default": "{{DEFAULT_VALUE_FOR_THIS_SETTING_OR_EMPTY_STRING_FOR_NULL}}",
+                        "hidden": false,
+                        "private": false,
+                        "tooltip": "{{ELEMENT_SETTING_SPECIFIC_TOOLTIP_NO_HTML_ALLOWED_100_CHAR_MAX}}"
+                    }
+                ]
+            },
+            "properties": [
+            ]
+        }
+    ],
+    "webhooks": {
+        "callback_url": "{{MY_WEEBLY_WEBHOOK_CALLBACK_URL}}",
+        "events": ["site.publish", "site.update"]
+    }
 }

@@ -1,0 +1,47 @@
+{
+    "manifest": "1",
+    "version": "0.1.0",
+    "locale": "en-us",
+    "client_id": "68e671ca99343829518d6982bdd453c4583061821ea3c10b83f25bf9be0d8439",
+    "callback_url": "https://bdean-weebly-helloworld.herokuapp.com/oauth/callback",
+    "scopes": ["read:site", "write:site", "read:membership"],
+    "oauth_final_destination": "editor",
+    "elements": [
+        {
+            "name": "Hello World",
+            "path": "elements/hello_world",
+            "version": "1.0.0",
+            "settings": {
+                "config": {
+                    "autopop": true
+                },
+                "properties": [
+                    {
+                        "name": "settings",
+                        "label": "Settings",
+                        "type": "group",
+                        "properties": [
+                            {
+                                "name": "display_value",
+                                "label": "Display Value",
+                                "type": "string",
+                                "default": "Hello World",
+                                "hidden": false,
+                                "private": false,
+                                "tooltip": "Change the text displayed in this element"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "tutorial": {
+                "introduction": "The Hello World app displays a string of text within the element instance on a user site",
+                "type": "step",
+                "content": [
+                    "Change the display text. This setting controls what text is shown from within the element"
+                ],
+                "autopop": true
+            }
+        }
+    ]
+}
