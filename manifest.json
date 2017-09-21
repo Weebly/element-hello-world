@@ -22,7 +22,7 @@
                         "type": "group",
                         "properties": [
                             {
-                                "name": "display_value",
+                                "name": "hello_world_display_value",
                                 "label": "Display Value",
                                 "type": "string",
                                 "default": "Hello World",

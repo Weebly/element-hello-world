@@ -1,0 +1,14 @@
+.helloWorld {
+    padding: 5%;
+    border: 1px solid #ccc;
+}
+
+.helloWorld .additionalDetails {
+    margin: 3%;
+    border: 1px dashed #333;
+}
+
+#hwText {
+    font-weight: bold;
+    color: red;
+}
