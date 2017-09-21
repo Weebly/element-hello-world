@@ -1,6 +1,8 @@
 <div class="helloWorld">
 
-    <div id="hwText">{name_{{helloWorldDisplayValue}}:text default="Hello World"}</div>
+    <div id="hwText">
+        {{hwTextValue}}
+    </div>
 
     <div class="additionalDetails">
         <strong>Your User ID:</strong> {{user_id}} <br />
