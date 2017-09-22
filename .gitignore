@@ -58,4 +58,7 @@ typings/
 .env
 config
 config.json
+
+# Weebly Stuff
+manifest.json
 *.zip

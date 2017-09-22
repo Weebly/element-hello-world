@@ -1,61 +1,38 @@
 {
     "manifest": "1",
-    "version": "{{WEEBLY_APP_VERSION}}",
+    "version": "0.1.0",
     "locale": "en-us",
     "client_id": "{{WEEBLY_CLIENT_ID}}",
-    "callback_url": "https://{{WEEBLY_OAUTH_CALLBACK_URL}}",
-    "scopes": {{WEEBLY_APP_SCOPES}},
-    "oauth_final_destination": "{{WEEBLY_OAUTH_FINAL_DESTINATION}}",
+    "scopes": ["read:site", "write:site", "read:membership"],
+    "oauth_final_destination": "editor",
     "elements": [
         {
-            "name": "Hello World",
+            "name": "My Hello World",
             "path": "elements/hello_world",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "settings": {
                 "config": {
                     "autopop": true
                 },
                 "properties": [
                     {
-                        "name": "{{SETTING_NAME}}",
-                        "label": "{{SETTINGS_LABEL_DISPLAY_NAME}}",
-                        "type": "{{ONE_OF_THE_WEEBLY_VALID_SETTING_TYPES}}",
-                        "default": "{{DEFAULT_VALUE_FOR_THIS_SETTING_OR_EMPTY_STRING_FOR_NULL}}",
-                        "hidden": false,
-                        "private": false,
-                        "tooltip": "{{ELEMENT_SETTING_SPECIFIC_TOOLTIP_NO_HTML_ALLOWED_100_CHAR_MAX}}"
+                        "name": "settings",
+                        "label": "Settings",
+                        "type": "group",
+                        "properties": [
+                            {
+                                "name": "hwTextValue",
+                                "label": "Display Value",
+                                "type": "string",
+                                "default": "Hello World",
+                                "hidden": false,
+                                "private": false,
+                                "tooltip": "Change the text displayed in this element"
+                            }
+                        ]
                     }
                 ]
-            },
-            "properties": [
-            ]
-        },
-        {
-            "name": "{{ELEMENT_NAME}}",
-            "path": "elements/{{ELEMENT_NAME}}",
-            "version": "{{ELEMENT_NAME_VERSION}}",
-            "settings": {
-                "config": {
-                    "autopop": true
-                },
-                "properties": [
-                    {
-                        "name": "{{PROPERTY_NAME}}",
-                        "label": "{{SETTINGS_LABEL_DISPLAY_NAME}}",
-                        "type": "{{ONE_OF_THE_WEEBLY_VALID_SETTING_TYPES}}",
-                        "default": "{{DEFAULT_VALUE_FOR_THIS_SETTING_OR_EMPTY_STRING_FOR_NULL}}",
-                        "hidden": false,
-                        "private": false,
-                        "tooltip": "{{ELEMENT_SETTING_SPECIFIC_TOOLTIP_NO_HTML_ALLOWED_100_CHAR_MAX}}"
-                    }
-                ]
-            },
-            "properties": [
-            ]
+            }
         }
-    ],
-    "webhooks": {
-        "callback_url": "{{MY_WEEBLY_WEBHOOK_CALLBACK_URL}}",
-        "events": ["site.publish", "site.update"]
-    }
+    ]
 }

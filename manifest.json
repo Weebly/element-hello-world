@@ -7,7 +7,7 @@
     "oauth_final_destination": "editor",
     "elements": [
         {
-            "name": "Hello World",
+            "name": "My Hello World",
             "path": "elements/hello_world",
             "version": "1.0.0",
             "settings": {
