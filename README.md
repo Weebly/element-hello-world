@@ -1,4 +1,4 @@
-# Weebly Element Starter App
+# Weebly Element Hello World 
 
 Simple Node.js application wrapped in a Docker container that helps developers build Weebly Elements
 
@@ -34,7 +34,7 @@ Prior to developing any code, please make sure you [read the Weebly App Policy R
 Clone using HTTPS
 
 ```
-git clone https://github.com/bdeanindy/weebly-element-starter-app.git
+git clone https://github.com/bdeanindy/weebly-element-hello-world.git
 ```
 
 Remember, you will need API Keys for your Weebly app and a Weebly Developer Site to test this code is working properly, please make sure to [Create a Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html) and to [Register a Weebly App](https://dev.weebly.com/register-your-app.html)
