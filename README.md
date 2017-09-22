@@ -1,6 +1,6 @@
 # Weebly Element Hello World 
 
-Simple Node.js application wrapped in a Docker container that helps developers build Weebly Elements
+Simple Node.js application to help developers understand how Weebly Elements are constructed
 
 ## Getting Started
 
@@ -22,7 +22,6 @@ Accounts you may need/want (if you do not already):
 
 * [Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html)
 * [Github](https://github.com)
-* [DockerHub](https://hub.docker.com/) will be used in later sample apps
 * [NPM](https://www.npmjs.com/signup)
 
 We need API Keys for this app to work, you can obtain those when you [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
