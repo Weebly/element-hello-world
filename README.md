@@ -1,11 +1,11 @@
 # Weebly Element Hello World 
 
-Simple Node.js application to help developers understand how Weebly Elements are constructed
+Simple Node.js application to help developers understand how Weebly Elements are constructed.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-See deployment for notes on how to deploy the project on a live system,
+See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -13,50 +13,57 @@ It is expected that you already have a Weebly Developer Account and can login to
 
 You will need the following software installed to develop the app:
 
-* [Node Version Manager, aka: NVM](https://github.com/creationix/nvm)
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org)
-* [NPM](https://www.npmjs.com/), please note this will install with Node.js except in very limited cases
-
-Accounts you may need/want (if you do not already):
-
-* [Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html)
-* [Github](https://github.com)
-* [NPM](https://www.npmjs.com/signup)
-
 We need API Keys for this app to work, you can obtain those when you [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
 
-Prior to developing any code, please make sure you [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) and that your app will not be at risk of being denied during publishing.
+**NOTE:** Prior to developing any custom code, please make sure you [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) and that your app will not be at risk of being denied during publishing.
 
-#### Clone the Repository
+### Get the Code
 
-Clone using HTTPS
+There are two ways you can get the code onto your local workstation.
+
+#### Clone with Git
+
+Clone using Git
 
 ```
 git clone https://github.com/bdeanindy/weebly-element-hello-world.git
 ```
 
-Remember, you will need API Keys for your Weebly app and a Weebly Developer Site to test this code is working properly, please make sure to [Create a Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html) and to [Register a Weebly App](https://dev.weebly.com/register-your-app.html)
+#### Download the `.zip`
 
-When you are registering your new Weebly App, let's call this app "My Hello World", and set its type to `services`.
+1. Download the `.zip` file here: [https://github.com/bdeanindy/weebly-element-hello-world/archive/master.zip](https://github.com/bdeanindy/weebly-element-hello-world/archive/master.zip).
+2. Extract the `weebly-element-hello-world.zip` file contents:
+    * [How to extract Zip files on Windows](https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files)
+    * [How to extract Zip files on Mac](https://support.apple.com/kb/PH25411?locale=en_US)
+    * [How to extract Zip files on Ubuntu](https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal)
+    * From Linux command line: `tar -xvf weebly-element-hello-world.zip -C /destination/directory/`
+
+### Get your Weebly App API Keys
+
+Make sure to [Create a Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html), if you have not already.
+
+You will need your **Weebly App's API Keys** and a **Weebly Developer Site** in order for this code to work properly after it is deployed.
+
+Next, please [Register a Weebly App](https://dev.weebly.com/register-your-app.html) to obtain your API Keys.
+
+While registering your new Weebly App, give it the name "My Hello World", and set the type to `services`.
 
 ### Configurations
 
-Now that you have the code cloned locally, and your new Weebly App API Client ID on-hand, you're ready to get started.
+Now that you have the code on your workstation, and your new Weebly App API Keys on-hand, you will need to update the code prior to deployment to Weebly.
 
 1. Open [manifest.json.tmpl](/manifest.json.tmpl) and replace `{{WEEBLY_CLIENT_ID}}` with the Weebly **Client ID** for the **My Hello World** app you created for the prerequisites.
 2. Once you save the changes, rename that file to `manifest.json` and save the changes.
-3. Next, commit these changes to history in Git: `git add manifest.json`, then `git commit -m "Update with my app client id"`
-4. Next, open the [Weebly Developer Admin](https://www.weebly.com/developer-admin), login if you are not already, and click on the "My Hello World" app if it is not already open
+3. Next, open the [Weebly Developer Admin](https://www.weebly.com/developer-admin), login if you are not already, and click on the "My Hello World" app if it is not already open
 
 ## Deployment
 
-1. Create a **.zip** file of EVERYTHING under the root (this should be the same working directory where the `.git` folder resides).
-2. Name or Rename that `.zip` file: `0.1.0.zip` (I've found it helpful to keep my zip file names mapped to the same as my app version)
-3. Now you need to **Upload a New Version** of your app's zip file in the Weebly Developer Admin and complete the form for the other required fields
-4. Then, click the **Save Draft** link. If any errors are displayed, correct those and click the **Save Draft** link again
-5. Next, Go back to the **My Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
-6. The Editor should immediately open, and you should see the My Hello World element in the editor highlighted in blue
+1. Create a **.zip** file of EVERYTHING within the root directory
+2. Name or Rename that `.zip` file: `0.1.0.zip` (I've found it helpful to keep my zip file names mapped to the same as my app version value in the `manifest.json` file)
+3. **Upload a New Version** of your app's zip file in the Weebly Developer Admin and complete the form for the other required fields
+4. Then, click the **Save Draft** link. __If any errors are displayed, correct those and try clicking the **Save Draft** link again__
+5. Go back to the **My Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
+6. The Editor should immediately open, and you should see the `My Hello World` element in the editor highlighted in blue
 7. Drag the **My Hello World** element on to a page of your Weebly site and play with the settings....TADA, hello world element in Weebly!
 
 ## Built With
@@ -64,6 +71,7 @@ Now that you have the code cloned locally, and your new Weebly App API Client ID
 * [Github](https://github.com)
 * [Node.js](https://maven.apache.org/) - JavaScript runtime built on Chrome's V8 JavaScript Engine
 * [NPM.js](https://npmjs.org) - Leading package manager for JavaScript
+* [NVM](https://github.com/creationix/nvm) - Leading Node Version Manager
 
 ## Contributing
 
@@ -75,7 +83,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Billie Thompson** - *Initial documentation work* - [PurpleBooth](https://github.com/PurpleBooth)
 * **Benjamin Dean** - *Core Contributor* - [bdeanindy](https://github.com/bdeanindy)
 
 ## Contributors
@@ -89,5 +97,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Weebly Engineering Team for all their efforts
-* Robin Whitmore - the initial author of the Weebly Developer Docs which made this possible
+* Robin Whitmore - the initial author of the Weebly Developer Docs and reviewer making this app possible
 * You, and all the Weebly App Developers who make Weebly awesome with your awesome questions and challenging issues

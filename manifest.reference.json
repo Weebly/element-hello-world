@@ -1,12 +1,12 @@
 {
     "manifest": "1",
     "version": "0.1.0",
-    "locale": "en-gb", // Default is `en-us`
+    "locale": "en-us", // Default is `en-us`
     "client_id": "",
-    "callback_url": "https://{{YOUR_URL_AUTH_CALLBACK_URL}}", // Optional
+    "callback_url": "https://{{YOUR_URL_AUTH_CALLBACK_URL}}", // Optional, more info: https://dev.weebly.com/app-authorization-and-install-flow.html/#implement-the-oauth-flow
     "manage_app_url": "https://{{YOUR_MANAGE_URL_FOR_THE_APP}}", // Optional, more info: https://dev.weebly.com/how-site-owners-manage-your-app.html
     "scopes": ["read:site", "write:site"], // Optional Values: `read:blog`, `write:blog`, `read:site`, `write:site`, `read:store-catalog`, `write:store-catalog`, `read:store-orders`, `write:store-orders`, `read:membership`, `write:membership`
-    "webhooks": {
+    "webhooks": { // Optional, more info: https://dev.weebly.com/use-webhooks.html
         "callback_url": "https://{{YOUR_WEBHOOK_CALLBACK_URL}}", // Optional
         "events": ["user:update", "site:publish"], // If app includes Dashboard Card, must include `dashboard.card.update`. For more information about all available events: https://dev.weebly.com/use-webhooks.html 
     },
@@ -19,41 +19,58 @@
         "version": "{{VERSION_OF_DASHBOARD_CARD}}",
         "label": "{{LABEL_OF_DASHBOARD_CARD}}",
         "icon": "{{RELATIVE_PATH_TO_ICON_FOR_DASHBOARD_CARD}}",
-        "link": "[https://]{{URL_TO_TAKEOVER_CONTENT}}", See this for restrictions: https://dev.weebly.com/create-a-dashboard-card.htmlupdate.card
-        "default": [ // See this for the convolution which can occur: https://dev.weebly.com/create-a-dashboard-card.html#add-panes
+        "link": "[https://]{{URL_TO_TAKEOVER_CONTENT}}", See this for restrictions: https://dev.weebly.com/create-a-dashboard-card.html#update.card
+        "default": [ // See this for the convolution which can occur: https://dev.weebly.com/create-a-dashboard-card.html#add-components
             {...DASHBOARD_COMPONENT_OBJECT_SCHEMA...}
         ]
     },
     // END DASHBOARD CARDS
 
     // ELEMENTS
-    "elements": [ // Optional, only required if there are elements with this app
-        "name": "{{ELEMENT_NAME}}",
-        "path": "{{ELEMENT_NAME_PATH}}",
-        "version": "{{ELEMENT_NAME_VERSION}}",
-        "settings": {
-            "config": {
-                "autopop": true // Defaults to `false`
-            }
-        },
-        "properties": [
-            {
-                "name": "{{INTERNAL_GROUP_NAME}}", // Useful for creating pages such as: Settings, Features, Location, Alignment, Advanced Settings, etc...
-                "label": "{{VISIBLE_LABEL_FOR_THIS_GROUP}}",
-                "type": "group", // Optional Values: `string`, `text`, `int`, `slider`, `toggle`, `radio`, `select`, `color`, `align`, and of course `group`
-                "default": "", // Default value for a setting, use "" for null
-                "hidden": true, // Default is `false`
-                "private": true, // Default is `false`, private makes this content only available to the editor code, but is NOT displayed to users
-                "tooltip": "" // The information to display when this is hovered over. 100 char maximum. No HTML permitted.
-            }
-        ]
+    "elements": [ // Optional, only required if there are elements with this app, an app can contain more than one element
+        { // Beginning of the element object
+            "name": "{{ELEMENT_NAME}}",
+            "path": "{{ELEMENT_NAME_PATH}}",
+            "version": "{{ELEMENT_NAME_VERSION}}",
+            "settings": {
+                "config": {
+                    "autopop": true // Defaults to `false`
+                }
+            },
+            "properties": [
+                { // One group per property is required, more info: https://dev.weebly.com/create-element-settings.html
+                    "name": "settings", // Required, internal identifier for this group of settings
+                    "label": "Settings", // Useful for creating names for groups of settings such as: Settings, Features, Location, Alignment, Advanced Settings, etc...
+                    "type": "group",
+                    "properties": [ // Required, more info: https://dev.weebly.com/create-element-settings.html
+                        {
+                            "name": "{{INTERNAL_GROUP_NAME}}", // Required, internal name of this property setting for the parent element
+                            "label": "{{DISPLAY_LABEL_FOR_THIS_GROUP}}", // Required, the name of this property displayed while editing this element in the Weebly UI
+                            "type": "string", // Optional Values: `string`, `text`, `int`, `slider`, `toggle`, `radio`, `select`, `color`, `align``
+                            "default": "", // Optional, Default value for a setting, use "" for null
+                            "hidden": true, // Optional, Default is `false`
+                            "private": true, // Optional, Default is `false`, private makes this content only available to the editor code, but is NOT displayed to users
+                            "tooltip": "" // Optional, The information to display when this is hovered over. 100 char maximum. No HTML permitted.
+                        }
+                    ]
+                }
+            ],
+            // TUTORIAL, Optional -- Tutorials are element-specific
+            "tutorial": { // Optional, used to group tutorial content. More info: https://dev.weebly.com/add-an-element-to-the-manifest.html#create-a-tutorial
+                "introduction": "The text that appears at the top of the dialog. If you are nesting topics, each has its own introduction.",
+                "label": "", // Only required when nesting tutorial topics, and is the name of the nested topic displayed in parent topic
+                "type": "steps", // Required, valid values: `steps`, `video`, `topics`, more info: The text that appears at the top of the dialog. If you are nesting topics, each has its own introduction. Should be "steps" if only using a single tutorial topic
+                "content": "My single topic tutorial", // Required, either a string or an array of content objects. More info: https://dev.weebly.com/add-an-element-to-the-manifest.html#create-a-tutorial
+                "autopop": true, // Optional, default is `false`, more info: https://dev.weebly.com/add-an-element-to-the-manifest.html#create-a-tutorial
+            } 
+        } // End of the elment object
     ],
     // END ELEMENTS
 
-    //THEMES
+    // THEMES - More Info on Themes: https://dev.weebly.com/create-the-theme-manifest.html
     "enableEditorJS": true, // Default is `false`, set to `true` if you want to use JS in your theme within the Weebly Editor. Info on current known issues: https://dev.weebly.com/known-issues.html#javascript
     "responsive": true, // Default is `false`
-    "glyph-icons": true, // Do not set to false?
+    "glyph-icons": true, // Do not set to false...ever
     "is-dark": true, // Default is `false`. Set to `true` if your theme has a dark background
     "color-support": [ // Optional, see: https://dev.weebly.com/create-a-color-palette.html
         {{COLOR_PALETTE_OBJECT}} 
@@ -69,16 +86,4 @@
     ],
     // END THEMES
 
-    "tutorial": { // Optional
-        "introduction": "",
-        "type": "topics", // Optional Values: `steps`
-        "content": [
-            {
-                "label": "",
-                "introduction": "",
-                "type": "steps", // Optional Values: 
-            }
-        ],
-        "autopop": true
-    } 
 }
