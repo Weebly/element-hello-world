@@ -11,9 +11,7 @@ See deployment for notes on how to deploy the project on a live system.
 
 It is expected that you already have a Weebly Developer Account and can login to the [Weebly Developer Admin](https://www.weebly.com/developer-admin/), if you do not you can [Create a Free Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html).
 
-You will need the following software installed to develop the app:
-
-We need API Keys for this app to work, you can obtain those when you [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
+You will need to define a new Weebly App named `Hello World` to [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
 
 **NOTE:** Prior to developing any custom code, please make sure you [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) and that your app will not be at risk of being denied during publishing.
 
@@ -46,15 +44,15 @@ You will need your **Weebly App's API Keys** and a **Weebly Developer Site** in 
 
 Next, please [Register a Weebly App](https://dev.weebly.com/register-your-app.html) to obtain your API Keys.
 
-While registering your new Weebly App, give it the name "My Hello World", and set the type to `services`.
+While registering your new Weebly App, give it the name "Hello World", and set the type to `services`.
 
 ### Configurations
 
 Now that you have the code on your workstation, and your new Weebly App API Keys on-hand, you will need to update the code prior to deployment to Weebly.
 
-1. Open [manifest.json.tmpl](/manifest.json.tmpl) and replace `{{WEEBLY_CLIENT_ID}}` with the Weebly **Client ID** for the **My Hello World** app you created for the prerequisites.
+1. Open [manifest.json.tmpl](/manifest.json.tmpl) and replace `{{WEEBLY_CLIENT_ID}}` with the Weebly **Client ID** for the **Hello World** app you created for the prerequisites.
 2. Once you save the changes, rename that file to `manifest.json` and save the changes.
-3. Next, open the [Weebly Developer Admin](https://www.weebly.com/developer-admin), login if you are not already, and click on the "My Hello World" app if it is not already open
+3. Next, open the [Weebly Developer Admin](https://www.weebly.com/developer-admin), login if you are not already, and click on the "Hello World" app if it is not already open
 
 ## Deployment
 
@@ -62,9 +60,9 @@ Now that you have the code on your workstation, and your new Weebly App API Keys
 2. Name or Rename that `.zip` file: `0.1.0.zip` (I've found it helpful to keep my zip file names mapped to the same as my app version value in the `manifest.json` file)
 3. **Upload a New Version** of your app's zip file in the Weebly Developer Admin and complete the form for the other required fields
 4. Then, click the **Save Draft** link. __If any errors are displayed, correct those and try clicking the **Save Draft** link again__
-5. Go back to the **My Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
-6. The Editor should immediately open, and you should see the `My Hello World` element in the editor highlighted in blue
-7. Drag the **My Hello World** element on to a page of your Weebly site and play with the settings....TADA, hello world element in Weebly!
+5. Go back to the **Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
+6. The Editor should immediately open, and you should see the `Hello World` element in the editor highlighted in blue
+7. Drag the **Hello World** element on to a page of your Weebly site and play with the settings....TADA, hello world element in Weebly!
 
 ## Built With
 
