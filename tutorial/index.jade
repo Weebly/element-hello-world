@@ -1,25 +1,62 @@
-.chapter(data-title='Your New Viewsaurus Tutorial')
+.chapter(data-title='Weebly Element - Hello World Tutorial')
   .step(data-title='Welcome!', data-file='tutorial/config.json')
-    h2 Welcome to Viewsaurus
+    h2 Welcome to Weebly Elements! 
 
-    p Thanks for writing a Viewsaurus tutorial! If you're new to Viewsaurus, feel free to click through this brief tutorial showing you how a Viewsaurus tutorial is structured.
+    p If you're new to Weebly Elements and want to know learn the basics, click through this brief tutorial showing you how the code is structured and where to find more information.
 
     p The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.
 
-    p Let's begin by walking through the files generated for you in the `tutorial` directory with the `saurus new` command - those files are actually what is being used to show you this tutorial right now!
-
-  .step(data-title='Tutorial Configuration', data-file='tutorial/config.json')
+  .step(data-title='Prerequisites', data-file='README.md', data-highlight='10-20')
     :markdown
-      ## Configuration
+      ## Prerequisites
 
-      The first file we'll look at is `config.json`. This contains high-level configuration information about your tutorial. This JSON file contains several properties you can declare about your tutorial:
+      ![It is dangerous to go alone]('tutorial/dangerousToGoAlone.png')
 
-      * `title`: This is the title of your tutorial which will show on the first page
-      * `description`: This is a string of text that will appear above the "Start" button for your tutorial.
-      * `repo`: This is the GitHub repo that your code lives in. Right now we assume all projects are hosted there, but we'll likely make this agnostic in the future.
-      * `heroku`: This indicates whether or not your project supports instant deployment with the [Heroku Button](https://blog.heroku.com/archives/2014/8/7/heroku-button)
+      There are some things you will need to complete this tutorial...
 
-      Now, let's take a look at the first file that contains the actual content of the tutorial, `index.jade`.
+      * If you do not already have a Free Weebly Developer Account, you can [Create a Free Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html).
+      * [Weebly Developer Admin](https://www.weebly.com/developer-admin/): You need to be able to login
+      * You will need an app named `Hello World`, use the docs to learn how to [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
+      * **NOTE:** Prior to developing any custom code for production use cases, please [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) to ensure your app meets Weebly's publishing requirements.
+
+      Once you have cloned this repository or downloaded/extracted the ZIP file to your local workstation, we are ready to learn about the `manifest.json` and why it is so important when building any Weebly app.
+
+  .step(data-title='Defining an App', data-file='manifest.json.tmpl', data-highlight='2-4')
+    :markdown
+      ## Manifest.json 
+
+      The first file we'll look at is `manifest.json.tmpl`.
+      **NOTE: We reference a template file in the tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
+      A single `manifest.json` JSON data file is **required** for all Weebly apps, in this case...an app defining a single element.
+      You can define more than one element within a single app if you choose.
+      This JSON file contains several properties you can declare about your app. Let's learn about the minimum required properties to define this `Hello World` app:
+
+      * `manifest` (string): **Required** The version of the Weebly Platform API your app implements, currently must always be set to `"1"`.
+      * `version` (string): **Required** The version of your app. This must follow [Semantic Versioning](http://semver.org/) guidelines.
+      * `elements` (array): **Required for Apps with Elements** The list of element objects associated with this app.
+
+      If you would like to learn more about the `manifest.json` file properties available, you can read the [Create the App Manifest](https://dev.weebly.com/create-the-app-manifest.html) article in the Weebly Developer Docs.
+
+      Now, let's look inside the `elements` property to learn how the Hello World Element definition works.
+
+  .step(data-title='Defining the Hello World Element', data-file='manifest.json.tmpl', data-highlight='4-9')
+    :markdown
+      ## Manifest.json 
+
+      **NOTE: We reference a template file in the tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
+
+      The `elements` property must be an array that contains `element` objects.
+      The `elements` is optional, but must be defined in your app's `manifest.json` if you want to [create an element](https://dev.weebly.com/what-are-elements.html) while you [develop your app](https://dev.weebly.com/develop-an-app.html).
+      Let's learn about the properties used to define the `Hello World` Element:
+
+      * `name`: **Required** This is the name of the Element that appears in the Weebly Editor Sidebar and setting dialogues, in our case, `Hello World`  
+      * `path`: **Required** A file path to the root directory of the element within the bundle
+      * `version`: **Required** This element's version, must follow [Semantic Versioning](http://semver.org) guidelines 
+      * `settings`: **Required** User-configurable properties for this specific element
+
+      You can read more about these properties of an element [here](https://dev.weebly.com/add-an-element-to-the-manifest.html#define-the-element).
+
+      Settings for an element can be quite complex, let's look at how the hello world element is setup...
 
   .step(data-title='Step Two')
     h2 Under Construction
