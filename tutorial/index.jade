@@ -2,66 +2,139 @@
   .step(data-title='Welcome!', data-file='tutorial/config.json')
     h2 Welcome to Weebly Elements! 
 
-    p If you're new to Weebly Elements and want to know learn the basics, click through this brief tutorial showing you how the code is structured and where to find more information.
+    p Learn how the Weebly Element Hello World app is structured with links to additional information for developers.
 
     p The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.
 
-  .step(data-title='Prerequisites', data-file='README.md', data-highlight='10-20')
+  .step(data-title='Prerequisites')
     :markdown
       ## Prerequisites
 
-      ![It is dangerous to go alone]('tutorial/dangerousToGoAlone.png')
+      ![It is dangerous to go alone]('/tutorial/dangerousToGoAlone.png')
 
-      There are some things you will need to complete this tutorial...
+      Before you can use the Hello World Element in your Developer Test Site on Weebly, you will need to do the following:
 
-      * If you do not already have a Free Weebly Developer Account, you can [Create a Free Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html).
-      * [Weebly Developer Admin](https://www.weebly.com/developer-admin/): You need to be able to login
-      * You will need an app named `Hello World`, use the docs to learn how to [Register a Weebly App](https://dev.weebly.com/register-your-app.html).
-      * **NOTE:** Prior to developing any custom code for production use cases, please [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) to ensure your app meets Weebly's publishing requirements.
+      1. If you do not already have a Free Weebly Developer Account, [create a free Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html).
+      2. You need to be able to login here: [Weebly Developer Admin](https://www.weebly.com/developer-admin/), or register as a developer if you cannnot.
+      3. You will need to create an app named `Hello World`, learn how here: [Register a Weebly App](https://dev.weebly.com/register-your-app.html)
 
-      Once you have cloned this repository or downloaded/extracted the ZIP file to your local workstation, we are ready to learn about the `manifest.json` and why it is so important when building any Weebly app.
+      **NOTE:** Prior to developing any custom code for production use cases, please [read the Weebly App Policy Requrements](https://dev.weebly.com/app-policy-requirements.html) to ensure your app meets Weebly's publishing requirements.
+
+      After you have either cloned this repository or downloaded/extracted the ZIP file to your local workstation, you are ready to continue.
 
   .step(data-title='Defining an App', data-file='manifest.json.tmpl', data-highlight='2-4')
     :markdown
       ## Manifest.json 
 
       The first file we'll look at is `manifest.json.tmpl`.
+
       **NOTE: We reference a template file in the tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
-      A single `manifest.json` JSON data file is **required** for all Weebly apps, in this case...an app defining a single element.
-      You can define more than one element within a single app if you choose.
-      This JSON file contains several properties you can declare about your app. Let's learn about the minimum required properties to define this `Hello World` app:
+
+      A single `manifest.json` JSON data file is **required** for all Weebly apps.
+
+      Our current `manifest.json` file defines a single element. You can have multiple elements within a single `manifest.json` (app) if you choose.
+
+      The `manifest.json` file contains properties Weebly's servers read when you upload your app.
+      
+      Let's learn about the properties used to define this basic `Hello World Element` app:
 
       * `manifest` (string): **Required** The version of the Weebly Platform API your app implements, currently must always be set to `"1"`.
       * `version` (string): **Required** The version of your app. This must follow [Semantic Versioning](http://semver.org/) guidelines.
       * `elements` (array): **Required for Apps with Elements** The list of element objects associated with this app.
 
-      If you would like to learn more about the `manifest.json` file properties available, you can read the [Create the App Manifest](https://dev.weebly.com/create-the-app-manifest.html) article in the Weebly Developer Docs.
+      To learn more about `manifest.json`, read [Create the App Manifest](https://dev.weebly.com/create-the-app-manifest.html) in the [Weebly Developer Docs](https://dev.weebly.com).
 
       Now, let's look inside the `elements` property to learn how the Hello World Element definition works.
 
-  .step(data-title='Defining the Hello World Element', data-file='manifest.json.tmpl', data-highlight='4-9')
+  .step(data-title='Defining Elements', data-file='manifest.json.tmpl', data-highlight='4-9')
     :markdown
-      ## Manifest.json 
+      ## Manifest.json - `elements`
 
-      **NOTE: We reference a template file in the tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
+      **NOTE:** The hello world element references a template file. Before deploying your Hello World Element, you must rename this file to `manifest.json`.
 
-      The `elements` property must be an array that contains `element` objects.
-      The `elements` is optional, but must be defined in your app's `manifest.json` if you want to [create an element](https://dev.weebly.com/what-are-elements.html) while you [develop your app](https://dev.weebly.com/develop-an-app.html).
-      Let's learn about the properties used to define the `Hello World` Element:
+      `elements` property must be an array that contains *element* objects.
+      `elements` property is optional, but must be defined to [create an element](https://dev.weebly.com/what-are-elements.html) while you [develop your app](https://dev.weebly.com/develop-an-app.html).
 
-      * `name`: **Required** This is the name of the Element that appears in the Weebly Editor Sidebar and setting dialogues, in our case, `Hello World`  
-      * `path`: **Required** A file path to the root directory of the element within the bundle
-      * `version`: **Required** This element's version, must follow [Semantic Versioning](http://semver.org) guidelines 
-      * `settings`: **Required** User-configurable properties for this specific element
+      Each *Element Object* must have the following properties defined:
 
-      You can read more about these properties of an element [here](https://dev.weebly.com/add-an-element-to-the-manifest.html#define-the-element).
+      * `name`: The name of the Element that appears in the Weebly Editor Sidebar and setting dialogues, in our case, `Hello World`  
+      * `path`: File path to the root directory of the element within the bundle
+      * `version`: This element's version, must follow [Semantic Versioning](http://semver.org) guidelines 
+      * `settings`: User-configurable properties for respective element
 
-      Settings for an element can be quite complex, let's look at how the hello world element is setup...
+      Here is the full list properties available when [defining your elements](https://dev.weebly.com/add-an-element-to-the-manifest.html#define-the-element).
 
-  .step(data-title='Step Two')
-    h2 Under Construction
+      `element.settings` can be confusing, let's review the hello world element settings...
 
-    p more tutorial to come.
+  .step(data-title='Element Setting Config', data-file='manifest.json.tmpl', data-highlight='10-12')
+    :markdown
+      `element.settings.config`
+
+      Settings for each element in your manifest must contain:
+
+      * `config` (object): **Required** Element behavior object defining how settings are presented when an instance of the element is dropped onto a page in the editor by a user
+
+      The *config* object has two properties which can be set: `autopop` and `external`
+
+      ** `autopop` (boolean): **Required** Developer-configured value indicating how the *Settings* modal should display to users.
+
+      `true` === Show immediately after instance of element is dropped on a page in the editor
+      `false` === Shown only when user clicks on the element instance after it has been dropped on a page in the editor
+
+      ** `external` (object): When set, defines `iframe` content to load external configuration settings loaded into the client from your server and communicates using PostMessage API
+
+      External settings are outside the scope of the Hello World example, but you can learn to [use external settings](https://dev.weebly.com/create-element-settings.html#external-settings).
+
+      For demonstrational purposes and to help you understand how settings work, the hello world element intentionally implements the most basic type of settings, although many more complex elements can be made.
+
+      Additional reading: [create element settings](https://dev.weebly.com/create-element-settings.html).
+
+  .step(data-title='Element - Setting Properties', data-file='manifest.json.tmpl', data-highlight='13-13')
+    :markdown
+      `element.settings.properties`
+
+      For demonstrational purposes and to help you understand how settings work, the hello world element intentionally implements the most basic type of settings.
+      However, it is important to understand that elements can contain complex groups of properties to define their settings.
+
+      Settings for each element in your manifest must contain:
+
+      * `properties' (array): **Required** Defines setting group(s) of user-configurable properties for each instance of the element dropped onto a page in the editor by a user
+
+  .step(data-title='Element Setting Groups', data-file='manifest.json.tmpl', data-highlight='15-18')
+    :markdown
+      `element.settings.properties.group`
+
+      The first element which must be defined within any `element.settings.properties` array is a [*group* object](https://dev.weebly.com/create-element-settings.html#create-a-group).
+
+      Groups define organized sets of element setting properties together which are displayed to users while configuring an instance of your element in the Weebly Editor.
+
+      You can have more than one group defined within `element.settings.properties` if your element needs additional settings groups displayed to users, but that is outside the scope of this tutorial.
+
+      * `name` (string): **Required** The internal name of your group, can be used to address properties from within setting templates (more on this later)
+      * `label` (string): **Required** Visible label presented to users as the group heading in the settings modal
+      * `type` (string): **Require** Must be set to `group`
+      * `properties` (array): **Required** The array of element setting objects, defines schema and metadata for each setting of the element within this group
+
+      Let's take a look at the code defining the hello world element setting...
+
+  .step(data-title='Setting Metadata', data-file='manifest.json.tmpl', data-highlight='19-27')
+    :markdown
+      `element.settings.properties.properties`
+
+      Each element of this array defines one specific [**element setting property** object](https://dev.weebly.com/create-element-settings.html#setting-properties).
+
+      Multiple element setting property objects may be included if needed, but that is outside the scope of this tutorial.
+
+      * `name` (string): **Required** The internal identifier of your setting, can be used when addressing properties from within setting templates (more on this later)
+      * `label` (string): **Required** Visible label of this setting presented to users in the settings modal
+      * `type` (string): **Require** The Weebly-specific type for this setting. See below for more information on setting types 
+      * `default` (array): **Required** The default value for this setting, use an empty string for `null`.
+      * `hidden` (boolean): Default === `false`, indicates if the setting is displayed for user-configuration of element instances, if set to `true` you must define a `default` value
+      * `private` (boolean): Default === `false`, Flag indicating if property data is available to visitors of published sites, helpful for private data only used during configuration of the element instances such as API Keys
+      * `tooltip` (string): Help string displayed to users during configuration when mouse hovers over this setting, max length is 100 characters, no markup allowed
+
+      You can [read the Weebly Developer Docs](https://developers.weebly.com) to learn the full capabilities of elements.
+      **NOTE:** If you want to have all of your settings managed via an external URL, you can set `hidden` to `true` on all settings.  When the element's settings modal is displayed during user-configuration, it will simply contain a button to open the iframe referenced in the URL as defined in [external settings](https://dev.weebly.com/create-element-settings.html#external-settings).
 
   //- Example: include markdown file
     .step(data-title='Step Three', data-file='', data-highlight='')
