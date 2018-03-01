@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bdeanindy/weebly-element-starter-app.git"
+    "url": "git+https://github.com/weebly/element-starter-app.git"
   },
   "keywords": ["weebly", "weebly apps", "developers", "apps", "weebly starter", "elements", "weebly elements", "weebly element developer", "weebly element app"],
   "author": "Benjamin Dean <benjamin@benjamindean.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bdeanindy/weebly-element-starter-app/issues"
+    "url": "https://github.com/weebly/element-starter-app/issues"
   },
-  "homepage": "https://github.com/bdeanindy/weebly-element-starter-app#readme"
+  "homepage": "https://weebly.github.io/element-hello-world/"
 }

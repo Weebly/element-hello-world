@@ -24,12 +24,12 @@ There are two ways you can get the code onto your local workstation.
 Clone using Git
 
 ```
-git clone https://github.com/bdeanindy/weebly-element-hello-world.git
+git clone https://github.com/weebly/element-hello-world.git
 ```
 
 #### Download the `.zip`
 
-1. Download the `.zip` file here: [https://github.com/bdeanindy/weebly-element-hello-world/archive/master.zip](https://github.com/bdeanindy/weebly-element-hello-world/archive/master.zip).
+1. Download the `.zip` file here: [https://github.com/weebly/element-hello-world/archive/master.zip](https://github.com/weebly/element-hello-world/archive/master.zip).
 2. Extract the `weebly-element-hello-world.zip` file contents:
     * [How to extract Zip files on Windows](https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files)
     * [How to extract Zip files on Mac](https://support.apple.com/kb/PH25411?locale=en_US)
