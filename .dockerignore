@@ -1,8 +1,0 @@
-node_modules
-bower_components
-.dockerignore
-Dockerfile
-npm-debug.log
-.git
-.hg
-.svn
