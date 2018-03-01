@@ -30,11 +30,11 @@ git clone https://github.com/weebly/element-hello-world.git
 #### Download the `.zip`
 
 1. Download the `.zip` file here: [https://github.com/weebly/element-hello-world/archive/master.zip](https://github.com/weebly/element-hello-world/archive/master.zip).
-2. Extract the `weebly-element-hello-world.zip` file contents:
+2. Extract the `element-hello-world.zip` file contents:
     * [How to extract Zip files on Windows](https://support.microsoft.com/en-us/help/14200/windows-compress-uncompress-zip-files)
     * [How to extract Zip files on Mac](https://support.apple.com/kb/PH25411?locale=en_US)
     * [How to extract Zip files on Ubuntu](https://askubuntu.com/questions/86849/how-to-unzip-a-zip-file-from-the-terminal)
-    * From Linux command line: `tar -xvf weebly-element-hello-world.zip -C /destination/directory/`
+    * From Linux command line: `tar -xvf element-hello-world.zip -C /destination/directory/`
 
 ### Get your Weebly App API Keys
 
