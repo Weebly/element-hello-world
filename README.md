@@ -38,6 +38,8 @@ git clone https://github.com/bdeanindy/weebly-element-hello-world.git
 
 ### Get your Weebly App API Keys
 
+**OPTIONAL** This step is only required if you plan on integrating your element with the [Weebly REST API](https://dev.weebly.com/about-rest-apis.html).
+
 Make sure to [Create a Weebly Developer Account](https://dev.weebly.com/create-a-developer-account.html), if you have not already.
 
 You will need your **Weebly App's API Keys** and a **Weebly Developer Site** in order for this code to work properly after it is deployed.
@@ -57,12 +59,14 @@ Now that you have the code on your workstation, and your new Weebly App API Keys
 ## Deployment
 
 1. Create a **.zip** file of EVERYTHING within the root directory
-2. Name or Rename that `.zip` file: `0.1.0.zip` (I've found it helpful to keep my zip file names mapped to the same as my app version value in the `manifest.json` file)
-3. **Upload a New Version** of your app's zip file in the Weebly Developer Admin and complete the form for the other required fields
-4. Then, click the **Save Draft** link. __If any errors are displayed, correct those and try clicking the **Save Draft** link again__
-5. Go back to the **Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
-6. The Editor should immediately open, and you should see the `Hello World` element in the editor highlighted in blue
-7. Drag the **Hello World** element on to a page of your Weebly site and play with the settings....TADA, hello world element in Weebly!
+2. Name or Rename the newly created `.zip` file: `0.1.0.zip` (I've found it helpful to keep my zip file names mapped to the same as my app version value in the `manifest.json` file)
+3. Login to the [Weebly Developer Admin Portal](https://www.weebly.com/developer-admin/)
+4. Choose your app from the list, if you haven't already.
+5. Click **Upload a New Version** of your app's zip file in the Weebly Developer Admin and complete the form for the other required fields
+6. Then, click the **Save Draft** link. __If any errors are displayed, correct those and try clicking the **Save Draft** link again__
+7. Go back to the **Hello World** app's **Versions** tab, and click on the link labeled **Install to Site** and choose your Weebly Developer Site
+8. The Editor should immediately open, and you should see the `Hello World` element in the editor highlighted in blue
+9. Drag the **Hello World** element on to a page of your Weebly site and play with the settings....TADA, hello world element in Weebly!
 
 ## Built With
 
