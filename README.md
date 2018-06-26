@@ -52,7 +52,7 @@ While registering your new Weebly App, give it the name "Hello World", and set t
 
 Now that you have the code on your workstation, and your new Weebly App API Keys on-hand, you will need to update the code prior to deployment to Weebly.
 
-1. Open [manifest.json.tmpl](/manifest.json.tmpl) and replace `{{WEEBLY_CLIENT_ID}}` with the Weebly **Client ID** for the **Hello World** app you created for the prerequisites.
+1. OPTIONAL, ONLY REQUIRED IF USING THE API OR AUTH. Open [manifest.json.tmpl](/manifest.json.tmpl) and replace `{{WEEBLY_CLIENT_ID}}` with the Weebly **Client ID** for the **Hello World** app you created for the prerequisites.
 2. Once you save the changes, rename that file to `manifest.json` and save the changes.
 3. Next, open the [Weebly Developer Admin](https://www.weebly.com/developer-admin), login if you are not already, and click on the "Hello World" app if it is not already open
 
