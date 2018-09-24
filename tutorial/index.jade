@@ -1,40 +1,23 @@
 .chapter(data-title='Weebly Element - Hello World Tutorial')
-  .step(data-title='Welcome!', data-file='manifest.json.tmpl', data-highlight='2-4')
+  .step(data-title='Welcome!')
     h2 Welcome to Weebly Element Hello World Tutorial!
 
     p Learn how the Weebly Element Hello World app is structured, with links to additional information for developers.
 
     p The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.
 
-  .step(data-title='Prerequisites', data-file='manifest.json.tmpl', data-highlight='2-4')
-    :markdown
-      ## Prerequisites
-
-      Before you can use the Hello World Element in your Developer Test Site on Weebly, you will need to do the following:
-
-      1. If you do not already have a Free Weebly Developer Account, [create a free Weebly Developer Account](https://dev.weebly.com/pf_apps_devAccount.html).
-      2. You need to be able to login here: [Weebly Developer Admin](https://www.weebly.com/developer-admin/), or register as a developer if you can't.
-      3. You will need to create an app named `Hello World`, learn how here: [Register a Weebly App](https://dev.weebly.com/pf_apps_register.html)
-
-      **NOTE:** Prior to developing any custom app for production, please [read the Weebly App Policy Requirements](https://dev.weebly.com/pf_apps_policy_requirements.html) to ensure your app meets Weebly's publishing requirements.
-
-      After you have either cloned this repository or downloaded/extracted the ZIP file to your local workstation, you are ready to continue.
 
   .step(data-title='Defining an App', data-file='manifest.json.tmpl', data-highlight='2-4')
     :markdown
       ## Manifest.json
 
-      The first file we'll look at is `manifest.json.tmpl`.
+      The first file we'll look at is `manifest.json.`.
 
-      **NOTE: We reference a template `manifest.json` file in this tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
+      **NOTE: We'll be referencing a template `manifest.json.tmpl` file in this tutorial. Before deploying your Hello World Element, you will rename this file to `manifest.json`.**
 
-      Each custom app in Weebly requires exactly one `manifest.json` JSON data file which is a child of the root of the ZIP file you will upload to Weebly (more about this later).
+      A Weebly app requires exactly one `manifest.json` JSON data file that lives at the root of the ZIP file you will upload to Weebly (more about this later). The manifest describes the app and also provides much of the UI functionality for an element. The `manifest.json` file the we've pre-defined for this tutorial defines a single element. But you can define multiple elements within a single `manifest.json` (app), if you choose.
 
-      The `manifest.json` file, we have pre-defined for this tutorial, defines a single element. You are able to define multiple elements within a single `manifest.json` (app) if you choose.
-
-      The `manifest.json` file is read by the Weebly Platform when you upload your app's ZIP file (more about this later).
-
-      Let's learn about the properties used to define this basic `Hello World Element` app:
+      Let's learn about the first three properties used to define this basic `Hello World Element` app:
 
       * `manifest` (string): **Required** The version of the Weebly Platform API your app implements, currently must always be set to `"1"`.
       * `version` (string): **Required** The version of your app. This must follow [Semantic Versioning](http://semver.org/) guidelines.
@@ -48,9 +31,7 @@
     :markdown
       ## Manifest.json - `elements`
 
-      **NOTE:** The hello world element references a template file. Before deploying your Hello World Element, you must rename this file to `manifest.json`.
-
-      `elements` property must be an array that contains *element* objects.
+      The `elements` property must be an array that contains *element* objects.
       `elements` property is optional within a `manifest.json` file, but must be defined if you intend to [create an element](https://dev.weebly.com/pf_apps_elements.html) while you [develop your app](https://dev.weebly.com/pf_apps_develop.html).
 
       ### Element Objects
@@ -122,7 +103,7 @@
     :markdown
       `element.settings.properties.properties` (we know, that is horrible).
 
-      Each item in this array defines one specific [**element setting property** object](https://dev.weebly.com/create-element-settings.html#setting-properties).
+      Each item in this array defines one specific [**element setting property** object](https://dev.weebly.com/pf_apps_element_settings.html#properties-structure).
 
       You can include multiple setting definitions if needed, but that is outside the scope of this tutorial.
 
@@ -137,7 +118,7 @@
       * `tooltip` (string): Help string displayed to users during configuration when mouse hovers over this setting, max length is 100 characters, no markup allowed
 
       To learn about the complete list of element settings available and their capabilities, [read the Weebly Developer Docs](https://developers.weebly.com).
-      **NOTE:** If you want to have all of your settings managed via an external URL, you can set `hidden` to `true` on all settings.  When the element's settings modal is displayed during user-configuration, it will simply contain a button to open the iframe referenced in the URL as defined in [external settings](https://dev.weebly.com/create-element-settings.html#external-settings).
+      **NOTE:** If you want to have all of your settings managed via an external URL, you can set `hidden` to `true` on all settings.  When the element's settings modal is displayed during user-configuration, it will simply contain a button to open the iframe referenced in the URL as defined in [external settings](https://dev.weebly.com/pf_apps_element_settings.html#create-external-settings).
 
   .step(data-title='Further Discussion')
     :markdown
